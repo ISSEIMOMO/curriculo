@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculo</title>
 
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        #conteudo{
+            white-space: pre-wrap;
+        }
+
+        .loading{
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loading" id="loading">
+        Carregando documento...
+    </div>
+
+    <div id="conteudo"></div>
+
+    <script>
+        const url = "https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnTJvR8Nkmp0gXzCgowDVnNo_pdzgRHBU4Sv0dE7NqnFt1Qk5MqtfRlzH0hv7deeSUKa_I3Xf7fbB_Ci5PfKtC9MpNPkKmZj3d_qe6CVvT66cCuZizUDqP9SGxF-gyQ8IM-kXkDV3fX63Qzb_d-b706hQprCUQ5jR4vgQN28k599mulbjgsMmD4UYWa0VNzMbxLZV5mNIibBdBXh92RqD_v16RL32MJ5Gj8L0_oi5WXZ9aXEvMt2-iggt3-FEpUfnGOOOo3-FY1pEtSdH6orSP9vgauxpg&lib=MspTKGJVP7XGG_cxVxZDxZLbNGw7gPQTT";
+
+        async function carregarDocumento(){
+            try{
+                const resposta = await fetch(url);
+                const dados = await resposta.json();
+
+                document.getElementById("conteudo").textContent = dados.conteudo;
+                document.getElementById("loading").style.display = "none";
+
+            }catch(erro){
+                document.getElementById("loading").textContent = "Erro ao carregar documento";
+                console.error(erro);
+            }
+        }
+
+        carregarDocumento();
+    </script>
+
+</body>
+</html>
