@@ -11,23 +11,25 @@
 <style>
 html, body {
     width: 100%;
-    height: 100%;
     margin: 0;
     padding: 0;
     background: #f8f9fa;
 }
 
-/* centralizador do conteúdo */
+/* =========================
+   WRAPPER (CENTRALIZA NO DESKTOP)
+========================= */
 .page-wrapper {
     width: 100%;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     padding: 40px 20px;
     box-sizing: border-box;
 }
 
-/* card principal do currículo */
+/* =========================
+   CARD (DESKTOP)
+========================= */
 .container-doc {
     width: 100%;
     max-width: 850px;
@@ -38,7 +40,9 @@ html, body {
     overflow-wrap: break-word;
 }
 
-/* 🔥 correção obrigatória do Google Docs */
+/* =========================
+   GOOGLE DOC FIX
+========================= */
 .doc-content,
 .c14 {
     max-width: 100% !important;
@@ -52,26 +56,29 @@ img {
     height: auto !important;
 }
 
-/* tabelas nunca estouram */
+/* tabelas responsivas */
 table {
     width: 100% !important;
 }
 
-/* evita elementos quebrando layout */
-span, p, div, li {
-    max-width: 100% !important;
-}
-
-/* mobile */
+/* =========================
+   📱 MOBILE (SEM CARD)
+========================= */
 @media (max-width: 768px) {
+
     .page-wrapper {
         padding: 0;
+        display: block;
     }
 
     .container-doc {
-        padding: 20px;
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 16px;
         border-radius: 0;
         box-shadow: none;
+        background: white;
     }
 }
 </style>
