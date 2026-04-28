@@ -19,7 +19,7 @@ html, body {
     overflow-x: hidden;
 }
 
-/* centraliza??o desktop */
+/* centralização desktop */
 .page-wrapper {
     width: 100%;
     display: flex;
@@ -36,41 +36,37 @@ html, body {
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(0,0,0,.08);
-    overflow-wrap: break-word;
     box-sizing: border-box;
+    overflow-wrap: break-word;
 }
 
-/* evita estouro do google docs */
-* {
-    max-width: 100% !important;
-}
+/* =========================
+   FIX GOOGLE DOCS (SEGURO)
+========================= */
 
 .doc-content,
 .c14 {
-    max-width: 100% !important;
     width: 100% !important;
+    max-width: 100% !important;
     margin: 0 !important;
 }
 
-/* imagens */
+/* NÃO usar * global (isso quebrava tudo) */
+
+/* imagens seguras */
 img {
     max-width: 100% !important;
     height: auto !important;
 }
 
-/* tabelas */
+/* tabelas seguras */
 table {
     width: 100% !important;
     table-layout: fixed;
 }
 
-/* texto geral */
-p, div, li, span {
-    max-width: 100% !important;
-}
-
 /* =========================
-   MOBILE (sem card)
+   MOBILE
 ========================= */
 @media (max-width: 768px) {
 
@@ -80,29 +76,22 @@ p, div, li, span {
     }
 
     .container-doc {
-        max-width: 100%;
         width: 100%;
+        max-width: 100%;
         margin: 0;
         padding: 16px;
         border-radius: 0;
         box-shadow: none;
     }
 
-    /* remove indenta??es do Google Docs */
+    /* só remove indentação do Docs no mobile */
     .container-doc * {
         margin-left: 0 !important;
-        padding-left: 0 !important;
         text-indent: 0 !important;
     }
 
     ul, ol {
         padding-left: 18px !important;
-        margin-left: 0 !important;
-    }
-
-    p {
-        margin-left: 0 !important;
-        padding-left: 0 !important;
     }
 
     .c14 {
