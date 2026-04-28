@@ -74,11 +74,7 @@ p, div, li, span {
 ========================= */
 @media (max-width: 768px) {
 
-    .page-wrapper {
-        padding: 0;
-        display: block;
-    }
-
+    /* já existente */
     .container-doc {
         max-width: 100%;
         width: 100%;
@@ -86,6 +82,33 @@ p, div, li, span {
         padding: 16px;
         border-radius: 0;
         box-shadow: none;
+        box-sizing: border-box;
+    }
+
+    /* 🔥 ESSENCIAL: mata indentação do Google Docs */
+    .container-doc * {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        text-indent: 0 !important;
+    }
+
+    /* listas muito apertadas */
+    ul, ol {
+        padding-left: 18px !important;
+        margin-left: 0 !important;
+    }
+
+    /* parágrafos mais confortáveis */
+    p {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    /* evita “coluna estreita visual” */
+    .doc-content,
+    .c14 {
+        width: 100% !important;
+        max-width: 100% !important;
     }
 }
 </style>
