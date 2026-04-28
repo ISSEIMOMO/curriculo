@@ -11,14 +11,14 @@
 <style>
 html, body {
     width: 100%;
+    max-width: 100%;
     margin: 0;
     padding: 0;
     background: #f8f9fa;
+    overflow-x: hidden; /* 🔥 ISSO AQUI É O MAIS IMPORTANTE */
 }
 
-/* =========================
-   WRAPPER (CENTRALIZA NO DESKTOP)
-========================= */
+/* desktop wrapper */
 .page-wrapper {
     width: 100%;
     display: flex;
@@ -27,9 +27,7 @@ html, body {
     box-sizing: border-box;
 }
 
-/* =========================
-   CARD (DESKTOP)
-========================= */
+/* card desktop */
 .container-doc {
     width: 100%;
     max-width: 850px;
@@ -38,11 +36,15 @@ html, body {
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(0,0,0,.08);
     overflow-wrap: break-word;
+    box-sizing: border-box;
 }
 
-/* =========================
-   GOOGLE DOC FIX
-========================= */
+/* 🔥 FORÇA TUDO A NÃO ESTOURAR */
+* {
+    max-width: 100% !important;
+}
+
+/* Google Docs caos fix */
 .doc-content,
 .c14 {
     max-width: 100% !important;
@@ -50,19 +52,25 @@ html, body {
     margin: 0 !important;
 }
 
-/* imagens responsivas */
+/* imagens */
 img {
     max-width: 100% !important;
     height: auto !important;
 }
 
-/* tabelas responsivas */
+/* tabelas */
 table {
     width: 100% !important;
+    table-layout: fixed;
+}
+
+/* listas e textos */
+p, div, li, span {
+    max-width: 100% !important;
 }
 
 /* =========================
-   📱 MOBILE (SEM CARD)
+   MOBILE (sem card)
 ========================= */
 @media (max-width: 768px) {
 
@@ -78,7 +86,6 @@ table {
         padding: 16px;
         border-radius: 0;
         box-shadow: none;
-        background: white;
     }
 }
 </style>
