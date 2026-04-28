@@ -9,48 +9,68 @@
 <title>Curriculo</title>
 
 <style>
-body{
-    background:#f8f9fa;
-    margin:0;
-    padding:0;
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #f8f9fa;
 }
 
-/* ocupa a tela toda */
-.container-doc{
-    width: 100%;
-    min-height: 100vh;
-    margin: 0;
+/* 🔥 FORÇA GOOGLE DOCS A NÃO LIMITAR LARGURA */
+.doc-content,
+.c14 {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 20px !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+}
+
+/* container principal */
+.container {
+    max-width: 100% !important;
+    padding: 0;
+}
+
+/* sua caixa */
+.container-doc {
+    width: 100% !important;
+    max-width: 1200px;
+    margin: auto;
     background: white;
     padding: 40px;
-    box-sizing: border-box;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,.08);
     overflow-wrap: break-word;
 }
 
-/* melhora responsividade */
+/* imagens do google docs quebram layout */
+img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Google Docs injeta spans com largura fixa */
+span {
+    max-width: 100% !important;
+}
+
+/* tabelas sempre responsivas */
+table {
+    width: 100% !important;
+}
+
+/* remove “limite invisível” de layout */
+p, div, li {
+    max-width: 100% !important;
+}
+
+/* responsivo */
 @media(max-width:768px){
-    .container-doc{
-        padding:20px;
+    .container-doc {
+        padding: 20px;
     }
-}
-
-/* imagens responsivas */
-img{
-    max-width:100%;
-    height:auto;
-}
-
-/* tabelas ocupam tudo */
-table{
-    width:100% !important;
-}
-
-/* opcional: deixa links mais "web" */
-a{
-    color:#0d6efd;
-    text-decoration:none;
-}
-a:hover{
-    text-decoration:underline;
 }
 </style>
 </head>
